@@ -13,9 +13,9 @@ void Subject::detach(Shop *shop)
 
 void Subject::notify(float price)
 {
-	for (auto it = shops.begin(); it != shops.end(); ++it)
+	for (const auto& i : shops)
 	{
-		(*it)->update(price);
+		i->update(price);
 	}
 }
 
