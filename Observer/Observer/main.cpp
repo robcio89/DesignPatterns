@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include "DummyProduct.h"
 
 using namespace std;
@@ -9,10 +10,11 @@ int main()
 	cout << "------------------------------------------" << endl;
 	DummyProduct prod;
 
-	Shop shop1("Shop1");
+	//Shop shop1("Shop1");
+	std::unique_ptr<Shop> shop1 = std::make_unique<Shop>("Shop1");
 	Shop shop2("Shop2");
 
-	prod.attach(&shop1);
+	prod.attach(shop1.get());
 	prod.attach(&shop2);
 
 	prod.change_price(23.05f);

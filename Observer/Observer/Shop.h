@@ -6,7 +6,7 @@
 class Shop : Observer
 {
 public:
-	Shop(std::string n): name(n) {};
+	Shop(const std::string& n): name(n) {};
 	~Shop() {};
 
 	void update(float p);
