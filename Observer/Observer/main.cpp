@@ -1,27 +1,27 @@
 #include <iostream>
 #include <memory>
-#include "DummyProduct.h"
-
-using namespace std;
+#include "ConcreteSubject.h"
 
 int main()
 {
-	cout << "Hello!\n" << endl;
-	cout << "------------------------------------------" << endl;
-	DummyProduct prod;
+	std::cout << "Hello!\n" << std::endl;
+	std::cout << "------------------------------------------" << std::endl;
+	ConcreteSubject prod;
 
-	//Shop shop1("Shop1");
 	std::unique_ptr<Shop> shop1 = std::make_unique<Shop>("Shop1");
-	Shop shop2("Shop2");
+	std::unique_ptr<Shop> shop2 = std::make_unique<Shop>("Shop2");
 
 	prod.attach(shop1.get());
-	prod.attach(&shop2);
+	prod.attach(shop2.get());
 
 	prod.change_price(23.05f);
 
-	prod.detach(&shop2);
-
+	prod.detach(shop2.get());
+	std::cout << "------------------------------------------" << std::endl;
 	prod.change_price(66.05f);
-	cout << "------------------------------------------" << endl;
+	std::cout << "------------------------------------------" << std::endl;
+	prod.change_price(99);
+
+	std::cout << std::endl;
 	return 0;
 }
