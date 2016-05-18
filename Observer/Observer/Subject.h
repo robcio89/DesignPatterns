@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include <list>
 #include "Shop.h"
 
 //This class keeps track of all the observers and provides 

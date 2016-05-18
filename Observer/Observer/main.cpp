@@ -21,6 +21,9 @@ int main()
 	prod.change_price(66.05f);
 	std::cout << "------------------------------------------" << std::endl;
 	prod.change_price(99);
+	prod.attach(shop2.get());
+	std::cout << "------------------------------------------" << std::endl;
+	prod.change_price(1000);
 
 	std::cout << std::endl;
 	return 0;

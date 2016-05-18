@@ -7,9 +7,9 @@ class Shop : Observer
 {
 public:
 	Shop(const std::string& n): name(n) {};
-	~Shop() {};
+	~Shop() = default;
 
-	void update(float p);
+	void update(float p) override;
 
 private:
 	std::string name;

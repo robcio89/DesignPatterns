@@ -4,8 +4,8 @@
 class ConcreteSubject : public Subject
 {
 public:
-	ConcreteSubject(void) {};
-	~ConcreteSubject(void) {};
+	ConcreteSubject(void) = default;
+	~ConcreteSubject(void) = default;
 
 	void change_price(float price);
 };
