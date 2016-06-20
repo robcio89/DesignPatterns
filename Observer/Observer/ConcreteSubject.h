@@ -8,5 +8,8 @@ public:
 	~ConcreteSubject(void) = default;
 
 	void change_price(float price);
+
+private:
+	float price;
 };
 

@@ -9,7 +9,7 @@ public:
 	Shop(const std::string& n): name(n) {};
 	~Shop() = default;
 
-	void update(float p) override;
+	void update(const float& p) override;
 
 private:
 	std::string name;

@@ -14,11 +14,11 @@ public:
 	Subject() {};
 	virtual ~Subject() {};
 
-	void attach(Shop *product);
-	void detach(Shop *product);
-	void notify(float price);
+	void attach(Shop *obsever);
+	void detach(Shop *obsever);
+	void notify(const float& price);
 
 private:
-	std::vector<Shop*> shops;
+	std::vector<Shop*> observers;
 };
 

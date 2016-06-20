@@ -5,6 +5,6 @@ public:
 	Observer(void) = default;
 	~Observer(void) = default;
 
-	virtual void update(float price) = 0;
+	virtual void update(const float& price) = 0;
 };
 

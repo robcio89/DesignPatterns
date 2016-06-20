@@ -1,19 +1,19 @@
 #include "Subject.h"
 #include <algorithm>
 
-void Subject::attach(Shop *shop)
+void Subject::attach(Shop *obsever)
 {
-	shops.push_back(shop);
+	observers.push_back(obsever);
 }
 
-void Subject::detach(Shop *shop)
+void Subject::detach(Shop *obsever)
 {
-	shops.erase(std::remove(shops.begin(), shops.end(), shop), shops.end());
+	observers.erase(std::remove(observers.begin(), observers.end(), obsever), observers.end());
 }
 
-void Subject::notify(float price)
+void Subject::notify(const float& price)
 {
-	for (const auto& i : shops)
+	for (const auto& i : observers)
 	{
 		i->update(price);
 	}

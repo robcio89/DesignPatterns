@@ -1,6 +1,7 @@
 #include <iostream>
 #include <memory>
 #include "ConcreteSubject.h"
+#include "Shop.h"
 
 int main()
 {
@@ -8,8 +9,8 @@ int main()
 	std::cout << "------------------------------------------" << std::endl;
 	ConcreteSubject prod;
 
-	std::unique_ptr<Shop> shop1 = std::make_unique<Shop>("Shop1");
-	std::unique_ptr<Shop> shop2 = std::make_unique<Shop>("Shop2");
+	auto shop1 = std::make_unique<Shop>("Shop1");
+	auto shop2 = std::make_unique<Shop>("Shop2");
 
 	prod.attach(shop1.get());
 	prod.attach(shop2.get());
